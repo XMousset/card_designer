@@ -227,11 +227,13 @@ class CardImg:
 
     def construct_card_image(self) -> None:
         """Paste all elements on front_card."""
+        # center image
         center_overlay = Image.open(
             self.color_path / (self.rank + "_center" + CardImg.img_format)
         )
         self.paste_center(center_overlay)
-
+        
+        # color image in each corners
         color_overlay = Image.open(
             self.color_path / (CONFIG["names"]["symbol"] + CardImg.img_format)
         )
@@ -243,6 +245,7 @@ class CardImg:
         )
         self.paste_corners(color_overlay, color_tl_coord)
         
+        # rank image in each corners
         rank_overlay = Image.open(
             self.color_path / (self.rank + CardImg.img_format)
         )
