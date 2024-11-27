@@ -1,0 +1,28 @@
+{
+    "options": {
+        "generate images": true,
+        "generate pdf": true,
+        "pdf format": "default",
+        "image format": ".png",
+        "verify margins": false
+    },
+    "dimensions": {
+        "bleed": [3, 3],
+        "margins": [4.5, 12],
+        "space": [0, 2],
+        "PPP": 300
+    },
+    "names": {
+        "ranks": ["A", "K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3", "2"],
+        "colors": ["diamonds", "spades", "hearts", "clubs"],
+        "symbol": "symbol",
+        "front": "front",
+        "front with margins": "front_check",
+        "back": "back"
+    },
+    "folders": {
+        "inputs": "inputs",
+        "outputs": "outputs",
+        "images": "cards"
+    }
+}
