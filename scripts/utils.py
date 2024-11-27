@@ -4,32 +4,47 @@ from scripts.config import CONFIG
 
 
 def sort_cards_path(path):
+    """Key function to sort cards in ascending order.
+
+    Parameters
+    ----------
+    path : str
+        The full path name of a card.
+
+    Returns
+    -------
+    tuple (str, int)
+        Tuple (c, r) for color and rank of the card.
+
+    Raises
+    ------
+    ValueError
+        If the name of the card 
+    """
     name = Path(path).stem
-    rank = name[-1:]
+    rank_str = name[-1:]
+    rank = 0
     color = name[:3]
     
-    if rank.isdigit():
-        rank = int(rank)
+    if rank_str.isdigit():
+        rank = int(rank_str)
         if rank == 0:
             rank = 10
     else:
-        match rank:
-            case "J":
-                rank = 11
-            case "Q":
-                rank = 12
-            case "K":
-                rank = 13
-            case "A":
-                rank = 14
-            case _:
-                raise ValueError(f"Card name as an error : {path}")
+        if rank_str in ["J", "V"]:
+            rank = 11
+        if rank_str in ["Q", "D"]:
+            rank = 12
+        if rank_str in ["K", "R"]:
+            rank = 13
+        if rank_str == "A":
+            rank = 14
     
     return (color, rank)
 
 
 def list_images_path() -> list:
-        """List all images in appropriate folder.
+        """List all images in folder define by CONFIG.
 
         Returns
         -------

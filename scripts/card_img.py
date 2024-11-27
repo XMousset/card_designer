@@ -25,6 +25,8 @@ class CardImg:
     """
     img_format = ""
     back_card = None
+    width = 0.0
+    height = 0.0
 
     def __init__(self, rank, color) -> None:
         """Initialize card rank and color.
@@ -45,7 +47,7 @@ class CardImg:
         self.color = color
         self.color_path = Path(CONFIG["folders"]["inputs"], color)
         if CONFIG["options"]["verify margins"]:
-            front_name = CONFIG["names"]["front with margins"] + CardImg.img_format
+            front_name = CONFIG["names"]["front check"] + CardImg.img_format
         else:
             front_name = CONFIG["names"]["front"] + CardImg.img_format
         front_path = Path(CONFIG["folders"]["inputs"], front_name)
@@ -64,13 +66,12 @@ class CardImg:
             The path of the back image.
         """
         cls.back_card = Image.open(img_path)
-        cls.width, cls.height = px_to_mm(
-            cls.back_card.size, rounded= True)
+        cls.width, cls.height = px_to_mm(cls.back_card.size, rounded= True)
     
     @classmethod
     def set_img_format(cls, format) -> None:
         """Set image format for the CardImg class.
-
+        
         Parameters
         ----------
         format : str
@@ -215,7 +216,7 @@ class CardImg:
         self.paste_img(img, center_coord)
 
     def save_image(self) -> None:
-        """Save front_card in folder."""
+        """Save self.front_card."""
         img_name = self.color + "_" + self.rank + CardImg.img_format
         save_path = Path(
             CONFIG["folders"]["outputs"],
@@ -226,7 +227,7 @@ class CardImg:
 
 
     def construct_card_image(self) -> None:
-        """Paste all elements on front_card."""
+        """Paste all elements on self.front_card."""
         # center image
         center_overlay = Image.open(
             self.color_path / (self.rank + "_center" + CardImg.img_format)
@@ -264,7 +265,6 @@ class CardImg:
 
 def generate_all_cards_images() -> None:
     """Loop on all cards and construct them."""
-    print("ici")
     back_name = CONFIG["names"]["back"] + CONFIG["options"]["image format"]
     back_path = Path(CONFIG["folders"]["inputs"], back_name)
     

@@ -17,7 +17,7 @@
         "colors": ["diamonds", "spades", "hearts", "clubs"],
         "symbol": "symbol",
         "front": "front",
-        "front with margins": "front_check",
+        "front check": "front_check",
         "back": "back"
     },
     "folders": {
