@@ -26,10 +26,7 @@ By default, the program uses **300 PPP (pixels per inch)** for input images. Whi
 ### Examples
 You have a default PDF example in `res/example_default.pdf` and the following cards images in `res/cards_example/`.
 
-<img src="res/cards_example/hearts_Q.png" alt="Image 1" height="200"/>
-<img src="res/cards_example/spades_9.png" alt="Image 1" height="200"/>
-<img src="res/cards_example/diamonds_6.png" alt="Image 1" height="200"/>
-<img src="res/cards_example/clubs_A.png" alt="Image 1" height="200"/>
+<img src="res/cards_example/hearts_Q.png" alt="Image 1" height="200"/> <img src="res/cards_example/spades_9.png" alt="Image 1" height="200"/> <img src="res/cards_example/diamonds_6.png" alt="Image 1" height="200"/> <img src="res/cards_example/clubs_A.png" alt="Image 1" height="200"/>
 
 **Note**: Images for **Q**:hearts: and **9**:spades: are made with `"verify margins": true` in `config.json` (*front_check.png* is used as front image). Those images are for visualizations only ! 
 Images for **6**:diamonds: and **A**:clubs: are the ones you want inside your PDF.
