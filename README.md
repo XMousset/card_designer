@@ -31,6 +31,10 @@ You have a default PDF example in `res/example_default.pdf` and the following ca
 **Note**: Images for **Q**:hearts: and **9**:spades: are made with `"verify margins": true` in `config.json` (*front_check.png* is used as front image). Those images are for visualizations only ! 
 Images for **6**:diamonds: and **A**:clubs: are the ones you want inside your PDF.
 
+### About the images
+
+You can use the images I created for any non-commercial use. Feel free to adapt them to make your own card game.
+
 
 ## Configuration Parameters (`config.json`)
 
