@@ -1,4 +1,4 @@
-# Custom Cards Deck Generator
+# Card designer
 
 
 This Python program uses images from the `inputs` folder to automatically construct the images of standard cards and assemble them into a PDF. The layout of the cards in the generated PDF is designed to match the requirements for ordering custom playing card games on most printing websites.
